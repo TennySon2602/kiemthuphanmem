@@ -20,6 +20,9 @@ Visual Studio Code
 
 Trình duyệt tích hợp của Cypress (Electron)
 
+<img width="1875" height="962" alt="Screenshot 2026-02-14 174902" src="https://github.com/user-attachments/assets/eca13bc9-eaea-448a-9c0c-ad11c20c2377" />
+
+<img width="1864" height="969" alt="Screenshot 2026-02-14 174914" src="https://github.com/user-attachments/assets/95ee73cc-c6b9-40be-85a4-5d00bea6647f" />
 
 ## ✅ Các kịch bản kiểm thử đã thực hiện
 1️⃣ Kiểm tra đăng nhập thành công

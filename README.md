@@ -114,12 +114,12 @@ Hoặc số lượng sản phẩm trở về 0
 
 📷 Kết quả: Sản phẩm được xóa thành công khỏi giỏ hàng.
 
-📸 Kết quả chạy kiểm thử
+## 📸 Kết quả chạy kiểm thử
 -Tất cả các kịch bản đều chạy PASS
 -Kết quả được minh họa bằng ảnh chụp màn hình trong Cypress Runner
 -Các ảnh được đính kèm trực tiếp trong repo theo yêu cầu bài tập
 
-📝 Kết luận
+## 📝 Kết luận
 -Hoàn thành đầy đủ các yêu cầu của bài tập
 -Làm quen với cách tổ chức test bằng describe, it, beforeEach
 -Hiểu rõ cách Cypress phát hiện và chạy nhiều test case trong cùng một file

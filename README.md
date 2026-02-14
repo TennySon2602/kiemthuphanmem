@@ -1,4 +1,4 @@
-#Bài tập thực hành kiểm thử tự động End-to-End với Cypress
+# Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 📌 Mục tiêu
 
 Làm quen và thực hành kiểm thử tự động End-to-End (E2E) bằng Cypress

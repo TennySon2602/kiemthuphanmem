@@ -1,3 +1,7 @@
+# Bài tập thực hành tuần 1
+<img width="1915" height="1032" alt="image" src="https://github.com/user-attachments/assets/592e08f2-90ac-4365-ac7b-102504106c47" />
+
+
 # Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 ## 📌 Mục tiêu
 

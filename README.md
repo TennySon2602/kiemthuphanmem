@@ -157,7 +157,7 @@ Công cụ được sử dụng:
 - https://truyenqqno.com/
 
 ## 3. Cấu trúc thư mục
-<img width="278" height="183" alt="image" src="https://github.com/user-attachments/assets/2a5f1647-cb01-42c6-a750-97be50537ca8" />
+<img width="271" height="126" alt="image" src="https://github.com/user-attachments/assets/2da97339-24c7-4598-ae90-a2176515ef3e" />
 
 
 ## 4. Mô tả Test Plan

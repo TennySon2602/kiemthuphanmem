@@ -128,3 +128,165 @@ Hoặc số lượng sản phẩm trở về 0
 -Làm quen với cách tổ chức test bằng describe, it, beforeEach
 -Hiểu rõ cách Cypress phát hiện và chạy nhiều test case trong cùng một file
 -Thực hành kiểm thử E2E cho các luồng nghiệp vụ quan trọng của một website bán hàng
+
+
+
+
+
+
+# Kiểm thử hiệu năng với Apache JMeter
+
+## 1. Giới thiệu
+Bài tập này nhằm mục đích giúp sinh viên:
+- Làm quen với công cụ **Apache JMeter** trong kiểm thử hiệu năng
+- Thiết kế và thực thi các kịch bản kiểm thử với nhiều mức tải khác nhau
+- Phân tích kết quả kiểm thử dựa trên các chỉ số hiệu năng cơ bản
+
+Công cụ được sử dụng:
+- Apache JMeter
+- Java
+- Trình duyệt JMeter GUI
+- GitHub để quản lý và nộp bài
+
+
+## 2. Website được kiểm thử
+
+- https://vnexpress.net
+- https://www.example.com/
+- https://shop.mixigaming.com
+- https://truyenqqno.com/
+
+## 3. Cấu trúc thư mục
+<img width="278" height="183" alt="image" src="https://github.com/user-attachments/assets/2a5f1647-cb01-42c6-a750-97be50537ca8" />
+
+
+## 4. Mô tả Test Plan
+
+Test Plan bao gồm 3 Thread Group, tương ứng với 3 kịch bản kiểm thử khác nhau.
+
+## 5. Thread Group 1 – Kịch bản cơ bản
+
+Mục tiêu:
+Kiểm tra phản hồi của website với số lượng người dùng nhỏ.
+
+Cấu hình:
+
+Number of Threads (Users): 10
+
+Loop Count: 5
+
+Ramp-up Period: 10 giây
+
+Phương thức: HTTP GET
+
+URL: https://www.example.com/
+<img width="1522" height="861" alt="image" src="https://github.com/user-attachments/assets/e1b49c1d-5c9b-4e94-8640-76f16ef3dcc7" />
+
+Kết quả mong đợi:
+
+Website phản hồi ổn định
+
+Không xuất hiện lỗi (Error Rate = 0%)
+
+<img width="1507" height="847" alt="image" src="https://github.com/user-attachments/assets/b9adeb3a-1fbc-4136-86b1-663a304717d0" />
+
+<!-- Chèn ảnh kết quả Thread Group 1 tại đây -->
+## 6. Thread Group 2 – Kịch bản tải nặng
+
+Mục tiêu:
+Đánh giá khả năng chịu tải của website khi số lượng người dùng tăng cao.
+
+Cấu hình:
+
+Number of Threads (Users): 50
+
+Ramp-up Period: 30 giây
+
+Loop Count: 1
+
+Phương thức: HTTP GET
+
+URL:https://shop.mixigaming.com/
+<img width="1517" height="852" alt="image" src="https://github.com/user-attachments/assets/43da8c1d-d370-443d-ad92-847ecf6ab7da" />
+
+Trang chủ
+
+Một trang con (bài viết hoặc danh mục)
+
+Kết quả mong đợi:
+
+Thời gian phản hồi tăng so với Thread Group 1
+
+Website vẫn hoạt động, không bị sập
+
+<img width="1507" height="843" alt="image" src="https://github.com/user-attachments/assets/0daf7e37-f6ab-4697-b5de-15244cf7488f" />
+
+<!-- Chèn ảnh Summary Report Thread Group 2 tại đây -->
+## 7. Thread Group 3 – Kịch bản tùy chỉnh
+
+Mục tiêu:
+Mô phỏng hành vi người dùng thực tế với thời gian chạy dài hơn.
+
+Cấu hình:
+
+Number of Threads (Users): 15
+
+Ramp-up Period: 60 giây
+
+Thời gian chạy: ~60 giây
+<img width="1516" height="860" alt="image" src="https://github.com/user-attachments/assets/e6d00758-82e5-4c44-9f0c-e4296087120a" />
+
+Phương thức:
+
+HTTP GET đến 2 trang con khác nhau
+
+Có cấu hình HTTP Header Manager:
+
+User-Agent
+
+Accept
+
+Accept-Language
+
+Lý do cấu hình User-Agent:
+Một số website (như Wikipedia) yêu cầu User-Agent hợp lệ để phân biệt bot và người dùng thật.
+
+<img width="1513" height="848" alt="image" src="https://github.com/user-attachments/assets/62fc264c-bc6c-41d0-af79-e31505ef73b9" />
+
+<!-- Chèn ảnh View Results Tree Thread Group 3 tại đây -->
+## 8. Phân tích kết quả kiểm thử
+
+Các chỉ số được sử dụng để đánh giá:
+
+Response Time: Thời gian phản hồi trung bình
+
+Throughput: Số request xử lý mỗi giây
+
+Error Rate: Tỷ lệ lỗi
+
+Nhận xét chung:
+
+Khi số lượng người dùng tăng, Response Time có xu hướng tăng
+
+Website vẫn hoạt động ổn định với tải trung bình
+
+Không ghi nhận lỗi nghiêm trọng trong quá trình kiểm thử
+
+📸 Ảnh minh họa Summary Report tổng hợp:
+
+<!-- Chèn ảnh Summary Report tổng hợp tại đây -->
+## 9. Kết luận
+
+Hoàn thành đầy đủ yêu cầu bài tập kiểm thử hiệu năng với JMeter
+
+Hiểu cách tạo Test Plan, Thread Group và Listener
+
+Biết cách xử lý các vấn đề phổ biến như:
+
+Website chặn bot
+
+Cấu hình User-Agent
+
+Điều chỉnh Ramp-up để tránh quá tải
+
+Có thể áp dụng JMeter để kiểm thử hiệu năng cho các dự án web thực tế

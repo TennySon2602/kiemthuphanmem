@@ -256,23 +256,67 @@ Một số website (như Wikipedia) yêu cầu User-Agent hợp lệ để phân
 <!-- Chèn ảnh View Results Tree Thread Group 3 tại đây -->
 ## 8. Phân tích kết quả kiểm thử
 
-Các chỉ số được sử dụng để đánh giá:
+8.1 Tổng quan kết quả
+<img width="1197" height="327" alt="image" src="https://github.com/user-attachments/assets/e7c8603a-179a-4523-84dd-643da9c8ec29" />
 
-Response Time: Thời gian phản hồi trung bình
+8.2 Phân tích theo từng kịch bản
+🔹 Thread Group 1 – Kịch bản cơ bản (ExampleDomain)
 
-Throughput: Số request xử lý mỗi giây
+Thời gian phản hồi trung bình rất thấp (~62 ms)
 
-Error Rate: Tỷ lệ lỗi
+Throughput cao (~46 request/giây)
 
-Nhận xét chung:
+Không phát sinh lỗi (0%)
 
-Khi số lượng người dùng tăng, Response Time có xu hướng tăng
+Phù hợp với website đơn giản, ít tài nguyên
 
-Website vẫn hoạt động ổn định với tải trung bình
+➡️ Đánh giá: Hiệu năng rất tốt, ổn định khi số lượng người dùng thấp.
 
-Không ghi nhận lỗi nghiêm trọng trong quá trình kiểm thử
+🔹 Thread Group 2 – Kịch bản tải nặng (AnhDoMixi)
 
-📸 Ảnh minh họa Summary Report tổng hợp:
+Thời gian phản hồi trung bình tăng lên (~137 ms)
+
+Response time tối đa lên tới 739 ms
+
+Throughput thấp hơn do nội dung trang lớn
+
+Không có lỗi trong quá trình test
+
+➡️ Đánh giá: Website xử lý ổn ở mức tải trung bình, nhưng bắt đầu có độ trễ khi tải tăng.
+
+🔹 Thread Group 3 – Kịch bản tùy chỉnh (TruyenQQ & VnExpress)
+
+TruyenQQ
+
+Response time cao nhất trong các case (~740 ms)
+
+Dung lượng phản hồi lớn (~214 KB/sample)
+
+Throughput thấp (~0.26 req/s)
+
+VnExpress
+
+Response time tương đối thấp (~101 ms)
+
+Dung lượng phản hồi lớn (~307 KB/sample)
+
+Ổn định, không lỗi
+
+➡️ Đánh giá:
+
+TruyenQQ có độ trễ cao, dễ bị ảnh hưởng khi tải tăng
+
+VnExpress được tối ưu tốt dù nội dung lớn
+
+8.3 Độ ổn định và lỗi
+
+Error Rate = 0% cho tất cả các kịch bản
+
+Không ghi nhận lỗi HTTP (4xx, 5xx)
+
+Không timeout hoặc connection error
+
+➡️ Điều này cho thấy các website được kiểm thử ổn định trong phạm vi tải đã cấu hình.
 
 <!-- Chèn ảnh Summary Report tổng hợp tại đây -->
 ## 9. Kết luận
